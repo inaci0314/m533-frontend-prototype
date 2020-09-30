@@ -1,0 +1,15 @@
+<article>
+    <div class="row">
+        <div class="list-group col-sm-4 col-lg-2">
+            <div class="list-group-item">Categories</div>
+            <div class="list-group-item" *ngFor="let category of categories">
+                <a [routerLink]="'articles/' + category.id" class="stretched-link">
+                    {{ category.name }}
+                </a>
+            </div>
+        </div>
+        <div class="col-sm-8">
+            <h2> Welcome </h2>
+        </div>
+    </div>
+</article>

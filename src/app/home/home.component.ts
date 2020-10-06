@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { articles } from "../articles";
 
 @Component({
   selector: 'app-home',
@@ -6,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
+  
 
   categories = [
     {
@@ -19,10 +21,22 @@ export class HomeComponent implements OnInit {
     {
       id: 2,
       name: "Category 3"
+    },
+    {
+      id: 3,
+      name: "Category 4"
+    },
+    {
+      id: 4,
+      name: "Category 5"
     }
   ];
-
-  constructor() { }
+  
+  articles;
+  
+  constructor() {
+    this.articles = articles;
+  }
 
   ngOnInit(): void {
   }

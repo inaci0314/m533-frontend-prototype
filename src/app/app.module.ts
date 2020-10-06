@@ -9,6 +9,7 @@ import { HomeComponent } from './home/home.component';
 import { TopBarComponent } from './top-bar/top-bar.component';
 import { FooterComponent } from './footer/footer.component';
 import { CartComponent } from './cart/cart.component';
+import { ArticleComponent } from './article/article.component';
 
 @NgModule({
   declarations: [
@@ -16,14 +17,17 @@ import { CartComponent } from './cart/cart.component';
     HomeComponent,
     TopBarComponent,
     FooterComponent,
-    CartComponent
+    CartComponent,
+    ArticleComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
     RouterModule.forRoot([
-      {path: "", component: HomeComponent}
+      {path: "", component: HomeComponent},
+      {path: "cart", component: CartComponent},
+      {path: "article/:id", component: ArticleComponent}
     ])
   ],
   providers: [],

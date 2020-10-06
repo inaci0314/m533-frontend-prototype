@@ -1,0 +1,28 @@
+<div class="container">
+    <div class="col-sm-12 row">
+        <div class="col-sm-6 text-center">
+            <img style="max-width: 100%; max-height: 100%" src="../../assets/img/default-placeholder-image.png" />
+        </div>
+        <div class="col-sm-6">
+            <h3> {{ article.name }} </h3>
+            <p> Article number: {{ article.id }} </p>
+            <p> Stock: {{ article.stock }} </p>
+            <p> {{ article.price | currency:'CHF':'symbol':'.2' }} </p>
+            <form>
+                <div class="form-group">
+                    <label for="quantity">Quantity: </label>
+                    <input class="form-control" name="quantity" type="number" value=1 min=1 />
+                </div>
+                <button class="btn btn-primary" type="submit">Add to cart</button>
+            </form>
+        </div>
+    </div>
+    <div class=" col-sm-12 mt-5 ">
+        <h2>Product Description</h2>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque sodales condimentum lorem, sed dignissim mi ultricies sit amet. Nulla condimentum, lectus quis tristique congue, tortor enim finibus urna, eu gravida ligula sem eu lectus. Phasellus
+            ante nisi, venenatis vel consequat vitae, blandit sed mi. Vestibulum tincidunt urna congue turpis venenatis, vel ornare libero cursus. Nulla iaculis, arcu ut finibus consequat, eros nibh euismod metus, nec consectetur eros dui in nibh. Mauris
+            ex sem, consectetur a dui ut, posuere malesuada sapien. Vestibulum id nisl vehicula, posuere urna sit amet, egestas justo. Nam purus mauris, sollicitudin ut pulvinar eu, porttitor non ante.
+        </p>
+    </div>
+</div>

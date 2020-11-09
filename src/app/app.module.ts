@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule } from "@angular/router";
+// To communicate with the RESTful CRUD API
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -10,6 +12,7 @@ import { TopBarComponent } from './top-bar/top-bar.component';
 import { FooterComponent } from './footer/footer.component';
 import { CartComponent } from './cart/cart.component';
 import { ArticleComponent } from './article/article.component';
+import { ArticlesComponent } from './articles/articles.component';
 
 @NgModule({
   declarations: [
@@ -18,16 +21,19 @@ import { ArticleComponent } from './article/article.component';
     TopBarComponent,
     FooterComponent,
     CartComponent,
-    ArticleComponent
+    ArticleComponent,
+    ArticlesComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
+    HttpClientModule,
     RouterModule.forRoot([
       {path: "", component: HomeComponent},
       {path: "cart", component: CartComponent},
-      {path: "article/:id", component: ArticleComponent}
+      {path: "article/:id", component: ArticleComponent},
+      {path: "articles", component: ArticlesComponent}
     ])
   ],
   providers: [],

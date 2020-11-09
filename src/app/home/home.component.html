@@ -1,22 +1,32 @@
 <article>
     <!-- Category menu -->
     <div class="row">
-        <div class="list-group col-sm-4 col-lg-4 align-self-center">
-            <div class="list-group-item">Categories</div>
+        <h1>Welcome to MyStore</h1>
+    </div>
+    <div class="row">
+        <p>Select one category to begin:</p>
+    </div>
+    <div class="row">
+        <div class="list-group col-12">
             <div class="list-group-item" *ngFor="let category of categories">
-                <a [routerLink]="'articles/' + category.id" class="stretched-link">
-                    {{ category.name }}
-                </a>
+                <a [routerLink]="''" class="stretched-link">
+                {{ category.name }}
+            </a>
             </div>
         </div>
 
-        <!-- Welcome -->
-        <div class="col-sm-8 col-lg-8 mt-2 text-center">
+        <!-- Welcome 
+        <div class="col-sm-12 col-lg-12 mt-2 text-center">
             <h2>Welcome</h2>
             <img src="../../assets/img/placeholder-300x202.jpg" alt="Some image" />
         </div>
+        -->
+    </div>
+    <div class="row mt-5">
+        <a [routerLink]="'articles/'">Click here to see all articles.</a>
     </div>
 </article>
+<!--
 <article class="mt-5">
     <h2>Featured</h2>
     <div class="row" style="text-decoration: none;">
@@ -27,3 +37,4 @@
         </a>
     </div>
 </article>
+-->

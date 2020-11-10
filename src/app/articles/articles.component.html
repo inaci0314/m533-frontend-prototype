@@ -1,8 +1,11 @@
-<h2>All articles</h2>
+<h2 *ngIf="this[category]; else allArticles">{{ category.name }}</h2>
+<ng-template #allArticles>
+    <h2>All articles</h2>
+</ng-template>
 
-<div class="row">
+<div *ngIf="articles?.length > 0; else noArticles" class="row">
     <div *ngFor="let article of articles" class="col-lg-2 col-md-3 col-sm-4 article">
-        <a [routerLink]="'article/' + article.id">
+        <a [routerLink]="'/article/' + article.id">
             <div class="card">
                 <img class="card-img-top" src="../../assets/img/default-placeholder-image.png" alt="article image" />
                 <div class="card-body">
@@ -17,3 +20,4 @@
         </a>
     </div>
 </div>
+<ng-template #noArticles>No articles to display.</ng-template>

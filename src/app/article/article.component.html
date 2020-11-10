@@ -19,10 +19,11 @@
     </div>
     <div class=" col-sm-12 mt-5 ">
         <h2>Product Description</h2>
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque sodales condimentum lorem, sed dignissim mi ultricies sit amet. Nulla condimentum, lectus quis tristique congue, tortor enim finibus urna, eu gravida ligula sem eu lectus. Phasellus
-            ante nisi, venenatis vel consequat vitae, blandit sed mi. Vestibulum tincidunt urna congue turpis venenatis, vel ornare libero cursus. Nulla iaculis, arcu ut finibus consequat, eros nibh euismod metus, nec consectetur eros dui in nibh. Mauris
-            ex sem, consectetur a dui ut, posuere malesuada sapien. Vestibulum id nisl vehicula, posuere urna sit amet, egestas justo. Nam purus mauris, sollicitudin ut pulvinar eu, porttitor non ante.
+        <p *ngIf="this[article.description]; else noDescription">
+            {{ article.description }}
         </p>
+        <ng-template #noDescription>
+            There is no procuct description.
+        </ng-template>
     </div>
 </div>

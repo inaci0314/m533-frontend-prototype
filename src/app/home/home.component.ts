@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { articles } from "../articles";
-
-import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { Category } from "../category";
+import { ApiService } from "../api.service";
 
 @Component({
   selector: 'app-home',
@@ -10,38 +8,15 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
+  categories: Category[];
   
-
-  categories = [
-    {
-      id: 0,
-      name: "Category 1"
-    },
-    {
-      id: 1,
-      name: "Category 2"
-    },
-    {
-      id: 2,
-      name: "Category 3"
-    },
-    {
-      id: 3,
-      name: "Category 4"
-    },
-    {
-      id: 4,
-      name: "Category 5"
-    }
-  ];
-  
-  articles;
-  
-  constructor() {
-    this.articles = articles;
+  constructor(private apiService: ApiService) {
   }
 
   ngOnInit(): void {
+    this.apiService.getCategories().subscribe((categories: Category[]) => {
+      this.categories = categories;
+    })
   }
 
 }

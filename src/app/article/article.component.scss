@@ -1,0 +1,25 @@
+.article-info {
+    .space {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    .title {
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
+    .article-number {
+        margin-top: 0;
+        padding-top: 0;
+        font-size: smaller;
+        color: grey;
+    }
+    .price-symbol {
+        font-size: smaller;
+        line-height: 2.5em;
+        margin-right: .25em;
+    }
+    .price-value {
+        font-size: larger;
+        font-weight: 500;
+    }
+}

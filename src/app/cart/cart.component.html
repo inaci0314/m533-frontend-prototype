@@ -1,1 +1,5 @@
-<p>cart works!</p>
+<h2>Shopping cart</h2>
+<div class="row space" *ngFor="let item of items">
+    <div class="col"> {{ item[0].name }} </div>
+    <div class="col"> {{ item[0].price }} </div>
+</div>

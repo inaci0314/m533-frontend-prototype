@@ -20,7 +20,6 @@ export class ArticlesComponent implements OnInit {
   ngOnInit(): void {
     this.route.queryParams.subscribe(params => {
       this.categoryId = params['category'];
-      console.log(this.categoryId);
     })
 
     // If there's a category id, get articles by category
@@ -30,7 +29,6 @@ export class ArticlesComponent implements OnInit {
         // And get the category
         this.apiService.getCategory(this.categoryId).subscribe((category: Category) => {
           this.category = category;
-          console.log(this.category);
         })
       })
     }
@@ -38,7 +36,6 @@ export class ArticlesComponent implements OnInit {
       // Otherwise, get all articles
       this.apiService.getAllArticles().subscribe((articles: Article[]) => {
         this.articles = articles;
-        console.log(this.articles);
       })
     }
   }

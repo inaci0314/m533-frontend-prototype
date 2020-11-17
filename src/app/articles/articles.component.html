@@ -7,13 +7,14 @@
     <div *ngFor="let article of articles" class="col-lg-2 col-md-3 col-sm-4 article">
         <a [routerLink]="'/article/' + article.id">
             <div class="card">
-                <img class="card-img-top" src="../../assets/img/default-placeholder-image.png" alt="article image" />
+                <!-- TODO: add images for each article -->
+                <img class="card-img-top" src="//placehold.it/300" alt="article image" />
                 <div class="card-body">
                     <p class="card-title">
                         {{ article.name }}
                     </p>
                     <p class="card-text">
-                        {{ article.price | currency:'CHF':'symbol':'.2' }}
+                        {{ article.price | currency:'CHF ':'symbol':'.2' }}
                     </p>
                 </div>
             </div>

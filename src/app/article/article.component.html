@@ -1,31 +1,31 @@
 <div class="container">
     <div class="row">
         <div class="col-sm-6 col-md-6 col-lg-6 text-center">
-            <img class="img-fluid" src="//placehold.it/300" alt="{{ article.name }}" />
+            <img class="img-fluid" src="//placehold.it/300" alt="{{ article?.name }}" />
         </div>
         <div class="col-sm-6 col-md-6 col-lg-6 article-info">
             <div class="row">
                 <div class="col-12">
-                    <h3 class="title"> {{ article.name }} </h3>
-                    <div class="article-number"> article n° {{ article.id }} </div>
+                    <h3 class="title"> {{ article?.name }} </h3>
+                    <div class="article-number"> article n° {{ article?.id }} </div>
                 </div>
 
             </div>
             <div class="row space"></div>
             <div class="row">
-                <div class="col-lg-4"> Stock: {{ article.stock }}</div>
+                <div class="col-lg-4"> Stock: {{ article?.stock }}</div>
                 <div class="col-lg-2"></div>
                 <div class="col-lg-6">
                     <span class="price-symbol"> CHF </span>
-                    <span class="price-value">{{ article.price | number :'.2' }}</span>
+                    <span class="price-value">{{ article?.price | number :'.2' }}</span>
                 </div>
             </div>
             <div class="row space"></div>
-            <!-- <form class="form-inline" action="" method="POST"> -->
-            <input class="form-control col-lg-4 col-md-3 col-sm-6" name="quantity" type="number" value=1 min=1 />
-            <div class="col-lg-2 col-md-1 col-sm-0"></div>
-            <button (click)="addToCart(article)" class="btn btn-primary col-lg-4 col-md-5 col-sm-6 mt-lg-0 mt-md-0 mt-sm-2" type="submit">Add to cart</button>
-            <!-- </form> -->
+            <form class="form-inline" [formGroup]="articleForm" (ngSubmit)="onSubmit(articleForm.value)">
+                <input class="form-control col-lg-4 col-md-3 col-sm-6" formControlName="quantity" type="number" value=1 min=1 />
+                <div class="col-lg-2 col-md-1 col-sm-0"></div>
+                <button class="btn btn-primary col-lg-4 col-md-5 col-sm-6 mt-lg-0 mt-md-0 mt-sm-2" type="submit">Add to cart</button>
+            </form>
         </div>
     </div>
     <div class="space">
@@ -33,8 +33,8 @@
         <div class="row">
             <div class="col-sm-12">
                 <h2>Product Description</h2>
-                <p *ngIf="this[article.description]; else noDescription">
-                    {{ article.description }}
+                <p *ngIf="this[article?.description]; else noDescription">
+                    {{ article?.description }}
                 </p>
                 <ng-template #noDescription>
                     There is no procuct description.

@@ -3,6 +3,8 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from "@angular/router";
 // To communicate with the RESTful CRUD API
 import { HttpClientModule } from '@angular/common/http';
+import { NgxWebstorageModule } from 'ngx-webstorage';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -29,6 +31,8 @@ import { ArticlesComponent } from './articles/articles.component';
     AppRoutingModule,
     NgbModule,
     HttpClientModule,
+    ReactiveFormsModule,
+    NgxWebstorageModule.forRoot(),
     RouterModule.forRoot([
       {path: "", component: HomeComponent},
       {path: "cart", component: CartComponent},

@@ -12,7 +12,16 @@ export class CartComponent implements OnInit {
   constructor(private cartService: CartService) { }
 
   ngOnInit(): void {
+    this.refresh();
+  }
+
+  refresh() {
     this.items = this.cartService.getItems();
+  }
+
+  clear() {
+    this.cartService.clearCart();
+    this.refresh();
   }
 
 }

@@ -16,7 +16,7 @@ export class CartService {
     // If the item is already in the cart, only modify the quantity
     for(let i = 0; i < this.items.length; i++)
     {
-      if (this.items[i][0].id = article.id)
+      if (this.items[i][0].id == article.id)
       {
         this.items[i][1] += quantity;
         newItem = false;

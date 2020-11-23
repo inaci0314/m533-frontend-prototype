@@ -31,6 +31,21 @@ export class CartService {
     window.alert(article.name + " added to the cart!");
   }
 
+  removeItem(id)
+  {
+    for(let i = 0; i < this.items.length; i++)
+    {
+      if (this.items[i][0].id == id)
+      {
+        this.items.splice(i, 1);
+        break;
+      }
+    }
+
+    this.storage.store(this.STORAGE_KEY, this.items);
+    window.alert("Item removed from the cart!");
+  }
+
   getItems() {
     this.items = this.storage.retrieve(this.STORAGE_KEY);
 

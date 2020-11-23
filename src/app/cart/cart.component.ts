@@ -24,4 +24,9 @@ export class CartComponent implements OnInit {
     this.refresh();
   }
 
+  removeItem(id) {
+    this.cartService.removeItem(id);
+    this.refresh();
+  }
+
 }

@@ -1,0 +1,34 @@
+.cart-item {
+    div {
+        margin-top: auto;
+        margin-bottom: auto;
+        padding-top: .5em;
+        padding-bottom: .5em;
+    }
+    a:hover {
+        opacity: 0.8;
+    }
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+    .btn {
+        padding: 0;
+        margin: 0;
+    }
+    .btn-delete {
+         :hover {
+            color: #d9534f;
+        }
+    }
+    .btn-edit {
+         :hover {
+            color: #0275d8;
+        }
+    }
+}
+
+.btn:focus {
+    outline: none;
+    box-shadow: none;
+}

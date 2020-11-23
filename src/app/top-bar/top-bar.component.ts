@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-top-bar',
@@ -6,10 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./top-bar.component.scss']
 })
 export class TopBarComponent implements OnInit {
+  myForm:FormGroup;
 
   constructor() { }
 
-  ngOnInit(): void {
-  }
+ ngOnInit(){
+         this.myForm = new FormGroup({
+           
+         })
+    }
 
 }

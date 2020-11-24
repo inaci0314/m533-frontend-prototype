@@ -9,7 +9,8 @@ import { Article } from './article';
   providedIn: 'root'
 })
 export class ApiService {
-  PHP_API_SERVER_V1 = 'http://m533-backend.test/api/v1';
+  PHP_API_SERVER = 'http://m533-backend.test';
+  PHP_API_SERVER_V1 = `${this.PHP_API_SERVER}/api/v1`;
 
   constructor(private httpClient: HttpClient) {
   }

@@ -1,34 +1,38 @@
-.cart-item {
-    div {
-        margin-top: auto;
-        margin-bottom: auto;
-        padding-top: .5em;
-        padding-bottom: .5em;
+.cart-item-table {
+    * {
+        // border: 1px solid black;
     }
-    a:hover {
-        opacity: 0.8;
-    }
-    a {
-        text-decoration: none;
-        color: inherit;
-    }
-    .btn {
-        padding: 0;
-        margin: 0;
-    }
-    .btn-delete {
-         :hover {
-            color: #d9534f;
+    thead {
+        color: grey;
+        th {
+            font-weight: normal;
         }
+        border-bottom: 1px solid lightgrey;
     }
-    .btn-edit {
-         :hover {
-            color: #0275d8;
-        }
-    }
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+a:hover {
+    opacity: 0.8;
 }
 
 .btn:focus {
     outline: none;
     box-shadow: none;
+}
+
+.btn-delete {
+     :hover {
+        color: #d9534f;
+    }
+}
+
+.btn-edit {
+     :hover {
+        color: #0275d8;
+    }
 }

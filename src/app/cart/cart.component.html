@@ -4,18 +4,28 @@
         <div class="ml-3 mr-3"><button (click)="clear()" class="btn btn-danger">Clear</button></div>
         <div class="ml-3 mr-3"><button (click)="refresh()" class="btn btn-info">Refresh</button></div>
     </div>
-    <div *ngFor="let item of items" class="row cart-item">
-        <div class="col-3"> <a [routerLink]="'/article/' + item[0].id">{{ item[0].name }}</a> </div>
-        <div class="col-1"> x{{ item[1] }} </div>
-        <div class="col-3"> <span class="small">CHF</span> {{ item[0].price | number:'.2' }} </div>
-        <div class="col-3"> <span class="small">CHF</span> {{ (item[0].price * item[1]) | number:'.2' }} </div>
-        <div class="col-1">
-            <button (click)="removeItem(item[0].id)" class="btn btn-delete"><i class="material-icons">delete</i></button>
-        </div>
-        <!-- <div class="col-1">
-            <button class="btn btn-edit"><i class="material-icons">edit</i></button>
-        </div> -->
-    </div>
+    <table class="table table-borderless cart-item-table">
+        <thead>
+            <tr>
+                <th> Article </th>
+                <th> Number </th>
+                <th> Quantity </th>
+                <th> Unit price </th>
+                <th> Price </th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of items">
+                <td> <a [routerLink]="'/article/' + item[0].id">{{ item[0].name }}</a> </td>
+                <td> {{item[0].id}} </td>
+                <td> {{ item[1] }} </td>
+                <td> <span class="small">CHF</span> {{ item[0].price | number:'.2' }} </td>
+                <td> <span class="small">CHF</span> {{ (item[0].price * item[1]) | number:'.2' }} </td>
+                <td> <button (click)="removeItem(item[0].id)" class="btn btn-delete"><i class="material-icons">delete</i></button> </td>
+            </tr>
+        </tbody>
+    </table>
 </div>
 <ng-template #noItems>
     There are no items in the cart.
